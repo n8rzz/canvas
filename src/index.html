@@ -5,43 +5,182 @@
   <script type="application/javascript">
     'use strict';
 
-    function draw() {
+    function draw() { // jshint ignore: line
       var canvas = document.getElementById('canvas');
       if (canvas.getContext) {
         var ctx = canvas.getContext('2d');
-        // var l = 25;
-        // var t = 20;
-
-        // step-down banner bg
-        ctx.fillStyle = 'green';
-        ctx.fillRect(40, 125, 420, 40);
-
-        // pocket bg
-        ctx.fillStyle = 'black';
-        ctx.fillRect (125, 40, 250, 310);
-
-        // pen bg
-        ctx.fillStyle = 'red';
-        ctx.fillRect(150, 10, 40, 110);
-
-        // pocket fg
-        ctx.fillStyle = 'grey';
-        ctx.fillRect (127.5, 80, 245, 266);
-
-        // banner fg
-        ctx.fillStyle = 'blue';
-        ctx.fillRect(75, 100, 350, 50);
-
-        // pen clip
-        ctx.fillStyle = 'green';
-        ctx.fillRect(162, 40, 15, 75);
 
 
+
+// pocket border
+        ctx.strokeStyle = '#FFFFFF';
+        ctx.lineWidth = 20;
+        ctx.beginPath();
+        ctx.moveTo(109,130);
+        ctx.lineTo(109,60);
+        ctx.quadraticCurveTo(109,49,129,49);  // top left
+        ctx.lineTo(369,49);
+        ctx.quadraticCurveTo(387,49,387,61); // top right
+        ctx.lineTo(387,298);
+        ctx.bezierCurveTo(387,309,383,312,379,315); // bottom right
+        ctx.lineTo(260,378);
+        ctx.bezierCurveTo(253,383,244,383,237,378); // bottom middle
+        ctx.lineTo(119,315);
+        ctx.bezierCurveTo(115,312,109,308,109,298); // bottom left
+        ctx.lineTo(109,119);
+        ctx.closePath();
+        ctx.stroke();
+
+
+// drop shadow
+        // ctx.shadowColor = 'rgba(0, 0, 0, 0.1';
+        // ctx.shadowBlur = 20;
+        // ctx.shadowOffsetX = 5;
+        // ctx.shadowOffsetY = 20;
+        // ctx.save();
+
+
+// big pocket
+        ctx.fillStyle = '#899a92';
+        ctx.strokeStyle = '#000000';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(109,130);
+        ctx.lineTo(109,60);
+        ctx.quadraticCurveTo(109,49,129,49);  // top right
+        ctx.lineTo(369,49);
+        ctx.quadraticCurveTo(387,49,387,61); // top left
+        ctx.lineTo(387,130);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+
+
+// pen bg in pocket
+        ctx.fillStyle = '#696a6b';
+        ctx.strokeStyle = '#000000';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(131,106);
+        ctx.lineTo(131,68);
+        ctx.bezierCurveTo(137,-5,167,-5,173,68);
+        ctx.lineTo(173,106);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+
+
+// small pocket
+        ctx.fillStyle = '#bcc5b9';
+        ctx.strokeStyle = '#000000';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(109,119);
+        ctx.bezierCurveTo(110,113,120,105,128,105); // inner top left
+        ctx.lineTo(370,105);
+        ctx.bezierCurveTo(380,105,387,115,387,120); // inner top right
+        ctx.lineTo(387,298);
+        ctx.bezierCurveTo(387,309,383,312,379,315); // bottom right
+        ctx.lineTo(260,378);
+        ctx.bezierCurveTo(253,383,244,383,237,378); // bottom middle
+        ctx.lineTo(119,315);
+        ctx.bezierCurveTo(115,312,109,308,109,298); // bottom left
+        ctx.lineTo(109,119);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+
+
+// banner bg rectangles
+        ctx.fillStyle = '#FFFFFF';
+        ctx.fillRect(13,152,93,88);
+        ctx.fillRect(49,127,400,88);
+        ctx.fillRect(391,152,93,88);
+
+
+// banner outline
+        ctx.fillStyle = '#000000';
+        ctx.strokeStyle = '#000000';
+        ctx.beginPath();
+        ctx.moveTo(446,162);
+        ctx.arc(446,162,4,0,Math.PI*2,false);
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(446,162);
+        ctx.lineTo(474,162);
+        ctx.lineTo(474,227);
+        ctx.lineTo(405,227);
+        ctx.lineTo(436,210);
+        ctx.lineTo(436,136);
+        ctx.lineTo(60,136);
+        ctx.lineTo(60,210);
+        ctx.lineTo(86,227);
+        ctx.lineTo(25,227);
+        ctx.lineTo(25,161);
+        ctx.lineTo(45,161);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(45,161,4,0,Math.PI*2,false);
+        ctx.fill();
+
+
+// pen clip
+        ctx.fillStyle = '#696a6b';
+        ctx.strokeStyle = '#000000';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(160,106);
+        ctx.lineTo(160,140);
+        ctx.bezierCurveTo(160,149,146,149,146,140);
+        ctx.lineTo(146,47);
+        ctx.bezierCurveTo(146,41,160,41,160,47);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+
+
+// banner title underline
+        ctx.fillStyle = '#000000';
+        ctx.strokeStyle = '#000000';
+        ctx.beginPath();
+        ctx.moveTo(80, 207);
+        ctx.arc(80,207,3,0,Math.PI*2,false);
+        ctx.fill();
+        ctx.lineTo(417, 207);
+        ctx.arc(417,207,3,0,Math.PI*2,false);
+        ctx.fill();
+        ctx.stroke();
+
+
+// nerdery 'N'
+        ctx.fillStyle = '#FFFFFF';
+        ctx.strokeStyle = '#000000';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(189,223);
+        ctx.lineTo(286,289);
+        ctx.arc(296,240,15, Math.PI*0.735, Math.PI*0.295,false);
+        ctx.lineTo(305,327);
+        ctx.lineTo(208,262);
+        ctx.arc(199,313,15, Math.PI*1.705, Math.PI*1.2645,false);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+
+
+// nerdery title
+        // ctx.beginPath();
+        ctx.font = '10px sans-serif';
+        ctx.fillStyle = '#000000';
+        ctx.fillText = ('NERDERY',85,155);
+        // ctx.fill();
       }
     }
   </script>
  </head>
  <body onload="draw();">
-   <canvas id="canvas" width="500" height="400" style="border:1px solid blue;"></canvas>
+   <canvas id="canvas" width="500" height="500" style="background-color:#eee;"></canvas>
  </body>
 </html>
