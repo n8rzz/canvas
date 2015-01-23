@@ -26,16 +26,27 @@
         var BLACK = '#000000';
         var WHITE = '#FFFFFF';
 
-        var halfWidth = canvas.getAttribute('width') * 0.5;
-        var halfHeight = canvas.getAttribute('height') * 0.5;
-        // Rotate about the center of the canvas
+        // var halfWidth = canvas.getAttribute('width') * 0.5;
+        // var halfHeight = canvas.getAttribute('height') * 0.5;
+        // // Rotate about the center of the canvas
+        // ctx.save();
+        // ctx.translate(halfWidth, halfHeight);
+        // ctx.rotate(Math.PI * 0.5);
+        // ctx.translate(-halfWidth, -halfHeight);
+        // ctx.restore();
+
         ctx.save();
-        ctx.translate(halfWidth, halfHeight);
-        ctx.rotate(Math.PI * 0.5);
-        ctx.translate(-halfWidth, -halfHeight);
-        ctx.restore();
 
+// drop shadow
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.1';
+        ctx.shadowBlur = 20;
+        ctx.shadowOffsetX = 5;
+        ctx.shadowOffsetY = 15;
 
+// banner bg fill
+        // ctx.fillStyle = WHITE;
+        // ctx.fillRect(13,152,93,88);
+        // ctx.fillRect(391,152,93,88);
 
 // pocket border
         ctx.strokeStyle = WHITE;
@@ -46,24 +57,26 @@
         ctx.quadraticCurveTo(109, 49, 129, 49);  // top left
         ctx.lineTo(369, 49);
         ctx.quadraticCurveTo(387, 49, 387, 61); // top right
+        ctx.lineTo(387, 152);
+        ctx.lineTo(482, 152);
+        ctx.lineTo(482, 237);
+        ctx.lineTo(387, 237);
         ctx.lineTo(387, 298);
         ctx.bezierCurveTo(387, 309, 383, 312, 379, 315); // bottom right
         ctx.lineTo(260, 378);
         ctx.bezierCurveTo(253, 383, 244, 383, 237, 378); // bottom middle
         ctx.lineTo(119, 315);
         ctx.bezierCurveTo(115, 312, 109, 308, 109, 298); // bottom left
+        ctx.lineTo(109, 237);
+        ctx.lineTo(13, 237);
+        ctx.lineTo(13, 152);
+        ctx.lineTo(109, 152);
         ctx.lineTo(109, 119);
         ctx.closePath();
         ctx.stroke();
 
 
-// // drop shadow
-//         ctx.shadowColor = 'rgba(0, 0, 0, 0.1';
-//         ctx.shadowBlur = 20;
-//         ctx.shadowOffsetX = 5;
-//         ctx.shadowOffsetY = 20;
-//         ctx.save();
-
+        ctx.restore();
 
 // big pocket
         ctx.fillStyle = '#899a92';
@@ -116,22 +129,11 @@
         ctx.stroke();
 
 
-// banner bg
+// banner bg title rectangle
         ctx.fillStyle = WHITE;
-        ctx.beginPath();
-        ctx.moveTo(12, 149);
-        ctx.lineTo(48, 149);
-        ctx.lineTo(48, 123);
-        ctx.lineTo(449, 123);
-        ctx.lineTo(449, 149);
-        ctx.lineTo(486, 149);
-        ctx.lineTo(486, 239);
-        ctx.lineTo(390, 239);
-        ctx.lineTo(390, 207);
-        ctx.lineTo(108, 207);
-        ctx.lineTo(108, 238);
-        ctx.lineTo(12, 238);
-        ctx.fill();
+        ctx.fillRect(13,152,93,88);
+        ctx.fillRect(49,127,400,88);
+        ctx.fillRect(391,152,93,88);
 
 // banner outline
         ctx.fillStyle = BLACK;
@@ -162,6 +164,19 @@
         ctx.fill();
 
 
+// banner title underline
+        ctx.fillStyle = BLACK;
+        ctx.strokeStyle = BLACK;
+        ctx.beginPath();
+        ctx.moveTo(80,  207);
+        ctx.arc(80, 207, 3, 0, Math.PI*2, false);
+        ctx.fill();
+        ctx.lineTo(417,  207);
+        ctx.arc(417, 207, 3, 0, Math.PI*2, false);
+        ctx.fill();
+        ctx.stroke();
+
+
 // pen clip
         ctx.fillStyle = '#696a6b';
         ctx.strokeStyle = BLACK;
@@ -173,19 +188,6 @@
         ctx.lineTo(146, 47);
         ctx.bezierCurveTo(146, 41, 160, 41, 160, 47);
         ctx.closePath();
-        ctx.fill();
-        ctx.stroke();
-
-
-// banner title underline
-        ctx.fillStyle = BLACK;
-        ctx.strokeStyle = BLACK;
-        ctx.beginPath();
-        ctx.moveTo(80,  207);
-        ctx.arc(80, 207, 3, 0, Math.PI*2, false);
-        ctx.fill();
-        ctx.lineTo(417,  207);
-        ctx.arc(417, 207, 3, 0, Math.PI*2, false);
         ctx.fill();
         ctx.stroke();
 
@@ -207,9 +209,9 @@
 
 
 // nerdery title
-        ctx.font = '38pt Stratum2-Bold';
+        ctx.font = '40pt Stratum2-Bold';
         ctx.fillStyle = BLACK;
-        ctx.fillText('NERDERY', 80, 190, 350);
+        ctx.fillText('NERDERY', 135, 190, 350);
 
       }
     }
