@@ -57,20 +57,20 @@
         ctx.quadraticCurveTo(109, 49, 129, 49);  // top left
         ctx.lineTo(369, 49);
         ctx.quadraticCurveTo(387, 49, 387, 61); // top right
-        ctx.lineTo(387, 152);
-        ctx.lineTo(482, 152);
-        ctx.lineTo(482, 237);
-        ctx.lineTo(387, 237);
+        ctx.lineTo(387, 160);
+        ctx.lineTo(478, 160);
+        ctx.lineTo(478, 228);
+        ctx.lineTo(387, 228);
         ctx.lineTo(387, 298);
         ctx.bezierCurveTo(387, 309, 383, 312, 379, 315); // bottom right
         ctx.lineTo(260, 378);
         ctx.bezierCurveTo(253, 383, 244, 383, 237, 378); // bottom middle
         ctx.lineTo(119, 315);
         ctx.bezierCurveTo(115, 312, 109, 308, 109, 298); // bottom left
-        ctx.lineTo(109, 237);
-        ctx.lineTo(13, 237);
-        ctx.lineTo(13, 152);
-        ctx.lineTo(109, 152);
+        ctx.lineTo(109, 228);
+        ctx.lineTo(23, 228);
+        ctx.lineTo(23, 160);
+        ctx.lineTo(109, 160);
         ctx.lineTo(109, 119);
         ctx.closePath();
         ctx.stroke();
@@ -131,14 +131,15 @@
 
 // banner bg title rectangle
         ctx.fillStyle = WHITE;
-        ctx.fillRect(13,152,93,88);
-        ctx.fillRect(49,127,400,88);
-        ctx.fillRect(391,152,93,88);
+        ctx.fillRect(13,150,86,88);
+        ctx.fillRect(49,128,400,92);
+        ctx.fillRect(396,150,92,88);
 
 // banner outline
         ctx.fillStyle = BLACK;
         ctx.strokeStyle = BLACK;
         ctx.lineWidth = 2;
+
         ctx.beginPath();
         ctx.moveTo(446, 162);
         ctx.arc(446, 162, 4, 0, Math.PI*2, false);
