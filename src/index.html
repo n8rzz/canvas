@@ -43,14 +43,10 @@
         ctx.shadowOffsetX = 5;
         ctx.shadowOffsetY = 15;
 
-// banner bg fill
-        // ctx.fillStyle = WHITE;
-        // ctx.fillRect(13,152,93,88);
-        // ctx.fillRect(391,152,93,88);
 
 // pocket border
         ctx.strokeStyle = WHITE;
-        ctx.lineWidth = 20;
+        ctx.lineWidth = 16;
         ctx.beginPath();
         ctx.moveTo(109, 130);
         ctx.lineTo(109, 60);
@@ -81,9 +77,8 @@
 
 // banner bg title rectangle
         ctx.fillStyle = WHITE;
-        ctx.fillRect(13,150,96,88);
-        // ctx.fillRect(49,128,400,92);
-        ctx.fillRect(388,150,98,88);
+        ctx.fillRect(15,150,96,86);
+        ctx.fillRect(388,150,96,86);
 
 
 // big pocket
@@ -138,7 +133,7 @@
 
 // banner title bg
         ctx.fillStyle = WHITE;
-        ctx.fillRect(50, 128, 400, 88);
+        ctx.fillRect(50, 128, 400, 80);
 
 // banner outline
         ctx.fillStyle = BLACK;
@@ -154,12 +149,12 @@
         ctx.moveTo(446, 162);
         ctx.lineTo(474, 162);
         ctx.lineTo(474, 227);
-        ctx.lineTo(405, 227);
+        ctx.lineTo(400, 227);
         ctx.lineTo(436, 210);
         ctx.lineTo(436, 136);
         ctx.lineTo(60, 136);
         ctx.lineTo(60, 210);
-        ctx.lineTo(86, 227);
+        ctx.lineTo(95, 227);
         ctx.lineTo(25, 227);
         ctx.lineTo(25, 161);
         ctx.lineTo(45, 161);
@@ -217,7 +212,7 @@
 // nerdery title
         ctx.font = '40pt Stratum2-Bold';
         ctx.fillStyle = BLACK;
-        ctx.fillText('NERDERY', 135, 190, 350);
+        ctx.fillText('NERDERY', 135, 193, 350);
 
       }
     }
@@ -225,6 +220,5 @@
  </head>
  <body onload="draw();">
    <canvas id="canvas" width="500" height="500" style="background-color:#eee;"></canvas>
-   <div>The Nerdery</div>
  </body>
 </html>
