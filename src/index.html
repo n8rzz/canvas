@@ -25,6 +25,11 @@
         var ctx = canvas.getContext('2d');
         var BLACK = '#000000';
         var WHITE = '#FFFFFF';
+        var PEN_GREY = '#696a6b';
+        var bannerTopLeftX = 60;
+        var bannerTopLeftY = 136;
+        var bannerWidth = 378;
+        var bannerHeight = 76;
 
         // var halfWidth = canvas.getAttribute('width') * 0.5;
         // var halfHeight = canvas.getAttribute('height') * 0.5;
@@ -111,7 +116,7 @@
 
 
 // pen bg in pocket
-        ctx.fillStyle = '#696a6b';
+        ctx.fillStyle = PEN_GREY;
         ctx.strokeStyle = BLACK;
         ctx.lineWidth = 2;
         ctx.beginPath();
@@ -192,7 +197,7 @@
 
 
 // pen clip
-        ctx.fillStyle = '#696a6b';
+        ctx.fillStyle = PEN_GREY;
         ctx.strokeStyle = BLACK;
         ctx.lineWidth = 2;
         ctx.beginPath();
@@ -225,7 +230,10 @@
 // nerdery title
         ctx.font = '40pt Stratum2-Bold';
         ctx.fillStyle = BLACK;
-        ctx.fillText('NERDERY', 135, 193, 350);
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        console.log(bannerTopLeftX + (bannerWidth / 2), bannerTopLeftY + (bannerHeight / 2));
+        ctx.fillText('NERDERY', bannerTopLeftX + (bannerWidth / 2), bannerTopLeftY + (bannerHeight / 2));
 
       }
     }
