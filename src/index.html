@@ -46,27 +46,27 @@
 
 // pocket border
         ctx.strokeStyle = WHITE;
-        ctx.lineWidth = 16;
+        ctx.lineWidth = 14;
         ctx.beginPath();
         ctx.moveTo(109, 130);
         ctx.lineTo(109, 60);
         ctx.quadraticCurveTo(109, 49, 129, 49);  // top left
         ctx.lineTo(369, 49);
         ctx.quadraticCurveTo(387, 49, 387, 61); // top right
-        ctx.lineTo(387, 160);
-        ctx.lineTo(478, 160);
-        ctx.lineTo(478, 228);
-        ctx.lineTo(387, 228);
+        ctx.lineTo(387, 161);
+        ctx.lineTo(478, 161);
+        ctx.lineTo(478, 226);
+        ctx.lineTo(387, 226);
         ctx.lineTo(387, 298);
         ctx.bezierCurveTo(387, 309, 383, 312, 379, 315); // bottom right
         ctx.lineTo(260, 378);
         ctx.bezierCurveTo(253, 383, 244, 383, 237, 378); // bottom middle
         ctx.lineTo(119, 315);
         ctx.bezierCurveTo(115, 312, 109, 308, 109, 298); // bottom left
-        ctx.lineTo(109, 228);
-        ctx.lineTo(23, 228);
-        ctx.lineTo(23, 160);
-        ctx.lineTo(109, 160);
+        ctx.lineTo(109, 226);
+        ctx.lineTo(23, 226);
+        ctx.lineTo(23, 161);
+        ctx.lineTo(109, 161);
         ctx.lineTo(109, 119);
         ctx.closePath();
         ctx.stroke();
@@ -76,9 +76,22 @@
 
 
 // banner bg title rectangle
-        ctx.fillStyle = WHITE;
-        ctx.fillRect(15,150,96,86);
-        ctx.fillRect(388,150,96,86);
+        ctx.fillStyle = WHITE; //'rgba(0, 0, 0, 0.1)';
+        ctx.fillRect(16,154,84,79);
+        ctx.fillRect(400,154,84,79);
+
+
+// under banner circle sides
+        ctx.fillStyle = 'transparent';
+        ctx.strokeStyle = WHITE;
+        ctx.lineWidth = 4;
+        ctx.beginPath();
+        ctx.moveTo(107, 213);
+        ctx.arc(107, 213, 9, 0, Math.PI*2, false);
+        ctx.moveTo(399, 213);
+        ctx.arc(392, 213, 9, 0, Math.PI*2, true);
+        ctx.fill();
+        ctx.stroke();
 
 
 // big pocket
